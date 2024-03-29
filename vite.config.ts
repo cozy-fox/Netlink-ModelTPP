@@ -4,10 +4,11 @@ import solidPlugin from 'vite-plugin-solid';
 export default defineConfig({
   plugins: [solidPlugin()],
   server: {
-    port: 3000,
+    port: 3004,
   },
   build: {
     target: 'esnext',
+    assetsDir: 'src/assets'
   },
   resolve: {
     alias: {

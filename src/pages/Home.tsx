@@ -91,7 +91,7 @@ const Home: Component = () => {
                          ${bank() === key() && 'border-2 border-gray-600 shadow-lg shadow-black'}`}
                       >
                         <img
-                          src={each.image || 'src/assets/default_bank.png'}
+                          src={each.image || 'default_bank.png'}
                           alt="Bank Image"
                           class="h-full w-full object-cover object-center group-hover:opacity-75"
                         />
