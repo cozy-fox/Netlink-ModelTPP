@@ -1,0 +1,22 @@
+/* 
+
+If you are getting:
+"Unknown at rule @tailwindcss(unknownAtRules)" 
+
+Install the PostCSS Language Support extension!
+
+*/
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: #fff;
+}
+
+* {
+  color-scheme: white;
+}
