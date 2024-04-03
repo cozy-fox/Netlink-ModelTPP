@@ -2,8 +2,9 @@ import { createSignal } from 'solid-js';
 
 export const [transactionsListData, setTransactionsListData] = createSignal([]);
 export const [bankData, setBankData] = createSignal({
-    balance: null,
+    currency_eur: null,
+    currency_gbp: null,
     bankNumber: null,
-    currency: null,
+    currency_usd: null,
     username: null,
 });

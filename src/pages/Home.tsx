@@ -51,8 +51,9 @@ const Home: Component = () => {
             const user = {
               username: response.data.username,
               bankNumber: response.data.bankNumber,
-              balance: response.data.balance,
-              currency: response.data.currency,
+              balance_usd: response.data.balance_usd,
+              balance_gbp: response.data.balance_gbp,
+              balance_eur: response.data.balance_eur,
             };
             setBankData(user);
             const response_tran = await axios.get(

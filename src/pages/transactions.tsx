@@ -14,14 +14,24 @@ const bankDataFormat = [
     data_id: 'bankNumber',
   },
   {
-    title: 'Currency',
-    data_id: 'currency',
+    title: 'USD Balance',
+    data_id: 'balance_usd',
   },
   {
-    title: 'Balance',
-    data_id: 'balance',
+    title: 'Euro Balance',
+    data_id: 'balance_eur',
+  },
+  {
+    title: 'GBP Balance',
+    data_id: 'balance_gbp',
   },
 ];
+
+const currency_convert = {
+  balance_usd: 'USD',
+  balance_eur: 'Euro',
+  balance_gbp: 'GBP',
+};
 
 const Page1: Component = () => {
   return (
@@ -74,6 +84,36 @@ const Page1: Component = () => {
                   class="text-center text-3xl font-bold leading-9 tracking-tight text-gray-900"
                 />
               </div>
+              <div class={`my-2 flex w-full `}>
+                <div class="w-1/6">
+                  <BounceText
+                    initialDelay={0.1}
+                    text={'In/Out'}
+                    class="text-center text-lg font-bold"
+                  />
+                </div>
+                <div class="w-1/2">
+                  <BounceText
+                    initialDelay={0.1}
+                    text={'Bank Number'}
+                    class="text-center text-lg font-bold"
+                  />
+                </div>
+                <div class="w-1/6">
+                  <BounceText
+                    initialDelay={0.25}
+                    text={'Amount'}
+                    class="text-center text-lg font-bold"
+                  />
+                </div>
+                <div class="w-1/6">
+                  <BounceText
+                    initialDelay={0.31}
+                    text={'Currency'}
+                    class="text-center text-lg font-bold"
+                  />
+                </div>
+              </div>
               <For each={transactionsListData()}>
                 {(each, key) => (
                   <div
@@ -82,7 +122,7 @@ const Page1: Component = () => {
                     }`}
                     key={key}
                   >
-                    <div class="w-1/6">
+                    <div class="flex w-1/6 justify-center">
                       {each.sender == bankData().bankNumber ? (
                         <FaSolidArrowRightLong />
                       ) : (
@@ -94,15 +134,23 @@ const Page1: Component = () => {
                       <BounceText
                         initialDelay={0.1}
                         text={each.sender == bankData().bankNumber ? each.receiver : each.sender}
-                        class=""
+                        class="text-center"
                       />
                     </div>
                     <div class="w-1/6">
-                      <BounceText initialDelay={0.25} text={String(each.amount)} class="" />
+                      <BounceText
+                        initialDelay={0.25}
+                        text={String(each.amount)}
+                        class="text-center"
+                      />
                     </div>
                     <div class="w-1/6">
                       {' '}
-                      <BounceText initialDelay={0.31} text={each.currency} class="" />
+                      <BounceText
+                        initialDelay={0.31}
+                        text={currency_convert[each.currency]}
+                        class="text-center"
+                      />
                     </div>
                   </div>
                 )}
