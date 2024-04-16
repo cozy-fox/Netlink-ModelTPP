@@ -57,7 +57,10 @@ const PageNav: Component = () => {
 const App: Component = () => {
   return (
     <Router>
-      <div class="flex justify-center">
+      <div class="sticky top-0 flex justify-center">
+        <div class="absolute left-0 py-6 pl-8 text-3xl font-extrabold italic">
+          Open Banking Model
+        </div>
         <PageNav />
       </div>
       <Toaster />
