@@ -58,8 +58,13 @@ const App: Component = () => {
   return (
     <Router>
       <div class="sticky top-0 flex justify-center">
-        <div class="absolute left-0 py-6 pl-8 text-3xl font-extrabold italic">
-          Open Banking Model
+        <div class=" absolute left-0 inline-flex flex-row items-center py-6 pl-8">
+          <img
+            src={'logo.jpg'}
+            alt="Bank Image"
+            class="h-12 object-cover object-center group-hover:opacity-75"
+          />
+          <div class="hidden pl-3 text-3xl font-bold italic md:block">Model TPP</div>
         </div>
         <PageNav />
       </div>
